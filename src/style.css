@@ -1,0 +1,55 @@
+html,
+body,
+#root {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+body {
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+}
+
+/* root : 창을 드래그 할 수 있도록 만들어주는 최상단 오브젝트 */
+#root {
+	background-color: green;
+	-webkit-app-region: drag;
+}
+#root > div {
+	/* 겹치기 포지셔닝 */
+	position: absolute;
+}
+
+/* 배경 이미지 */
+#base,
+#hand,
+#hand_mouse,
+.base_img,
+.base_img_down,
+.body_img,
+.face_img,
+.hand_mouse_img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 몸통 */
+.face_img,
+.body_img {
+	position: fixed;
+}
+
+/* 마우스 팔 */
+/* .hand_mouse_img {
+
+} */
+
+/* 숨겨지는 이미지 */
+.onKeys.onDown.toNone {
+	display: none;
+}
+/* 보여지는 이미지 */
+.onKeys.toDisplay:not(.onDown) {
+	display: none;
+}
