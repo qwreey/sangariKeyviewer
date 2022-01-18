@@ -1,11 +1,11 @@
 {
-  "name": "key-viewer",
+  "name": "sangari-keyviewer",
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "electron": "11.0.0-beta.11",
-    "electron-builder": "22.7.0",
+    "electron-builder": "^22.7.0",
     "electronmon": "^1.1.2",
     "node-abi": "^2.26.0"
   },
@@ -33,10 +33,13 @@
     ]
   },
   "build": {
-    "productName": "KeyViewer",
-    "appId": "com.github.pikokr.keyviewer",
+    "compression": "store",
+    "productName": "Sangari-Keyviewer",
+    "appId": "com.github.qwreey75.sangari_Keyviewer",
     "win": {
+      "icon": "assets/icons/win/icon.ico",
       "target": [
+        "portable",
         "zip",
         "nsis"
       ]
@@ -51,11 +54,13 @@
       "app": "."
     },
     "mac": {
+      "icon": "./assets/icons/icon.icns",
       "target": [
         "dmg"
       ]
     },
     "linux": {
+      "icon": "./assets/icons/png/64x64.png",
       "target": [
         "appimage"
       ],

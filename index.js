@@ -1,24 +1,30 @@
 const { app, BrowserWindow } = require("electron")
+const path = require("path")
 app.allowRendererProcessReuse = false
 
 let win
+const config = require("./config.json")
+const renderScale = config.renderScale
+const winSize = config.winSize
 
 function createWindow() {
 	win = new BrowserWindow({
-		width: 360,
-		height: 200,
+		icon: path.join(__dirname, 'assets/icons/png/256x256.png'),
+		width: parseInt(winSize[0] * renderScale),
+		height: parseInt(winSize[1] * renderScale),
 		frame: false,
 		// alwaysOnTop: true,
 		resizable: false,
 		// transparent: true,
 		webPreferences: {
-			transparent: true,
-			preload: require("path").join(__dirname, "preload.js"),
+			// transparent: true,
+			preload: path.join(__dirname, "preload.js"),
 			nodeIntegration: true,
 			enableRemoteModule: true,
 			contextIsolation: false,
 		},
 	})
+	win.setAspectRatio(winSize[0])
 
 	win.loadFile("src/index.html")
 

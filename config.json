@@ -1,0 +1,14 @@
+{
+	"winSize": [360,200],
+	"mouseMoveMultiplier": [32, 16],
+	"mouseOffset": [-14, 16],
+	"mouseRotateX": -12,
+	"mouseRotateY": 30,
+	"renderScale": 2,
+	"breathHoldMs": 2500,
+	"breathReleaseMs": 3000,
+	"blinkHoldMs": 300,
+	"blinkWaitMs": {
+		"min": 4000,"max": 6000
+	}
+}
