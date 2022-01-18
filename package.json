@@ -59,7 +59,7 @@
       ]
     },
     "linux": {
-      "icon": "./assets/icons/png/64x64.png",
+      "icon": "./assets/icons/png/256x256.png",
       "target": [
         "appimage"
       ],
