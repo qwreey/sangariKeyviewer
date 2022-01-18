@@ -9,7 +9,7 @@ const winSize = config.winSize
 
 function createWindow() {
 	win = new BrowserWindow({
-		icon: path.join(__dirname, 'assets/icons/png/256x256.png'),
+		icon: 'src/app.png',
 		width: parseInt(winSize[0] * renderScale),
 		height: parseInt(winSize[1] * renderScale),
 		frame: false,
