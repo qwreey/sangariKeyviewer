@@ -33,7 +33,6 @@
     ]
   },
   "build": {
-    "compression": "store",
     "productName": "Sangari-Keyviewer",
     "appId": "com.github.qwreey75.sangari_Keyviewer",
     "win": {
