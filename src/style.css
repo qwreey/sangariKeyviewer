@@ -30,7 +30,8 @@ body {
 .body_img,
 .face_img,
 .face_img_ani,
-.hand_mouse_img {
+.hand_mouse_img,
+#face {
 	width: 100%;
 	height: 100%;
 }
@@ -38,7 +39,8 @@ body {
 /* 몸통 */
 .face_img,
 .body_img,
-.face_img_ani {
+.face_img_ani,
+#face {
 	position: fixed;
 }
 

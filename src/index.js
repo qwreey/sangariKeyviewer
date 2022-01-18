@@ -102,11 +102,25 @@ const mouseOffX = config.mouseOffset[0]
 const mouseOffY = config.mouseOffset[1]
 const mouseRotX = config.mouseRotateX
 const mouseRotY = config.mouseRotateY
+const bodyMoveX = config.bodyMove[0]
+const bodyMoveY = config.bodyMove[1]
+const faceMoveX = config.faceMove[0]
+const faceMoveY = config.faceMove[1]
+const body = document.querySelector("#body")
+const face = document.querySelector("#face")
 ioHook.on("mousemove", (event) => {
 	let x = event.x / screen.width - 0.5
 	let y = event.y / screen.height - 0.5
-	mouse.style.left = parseInt((x * -moveMutX) + mouseOffX  + (y * mouseRotY)) + "px"
-	mouse.style.top = parseInt((y * -moveMutY) + mouseOffY + (x * mouseRotX)) + "px"
+	
+	// 마우스 움직이기
+	mouse.style.left = parseInt((x * -moveMutX) + mouseOffX + (y * mouseRotY)) + "px"
+	mouse.style.top  = parseInt((y * -moveMutY) + mouseOffY + (x * mouseRotX)) + "px"
+
+	// 몸 움직이기
+	body.style.left = parseInt(bodyMoveX * x) + "px"
+	body.style.top  = parseInt(bodyMoveY * y) + "px"
+	face.style.left = parseInt(faceMoveX * x) + "px"
+	face.style.top  = parseInt(faceMoveY * y) + "px"
 })
 
 ioHook.start()

@@ -10,5 +10,7 @@
 	"blinkHoldMs": 300,
 	"blinkWaitMs": {
 		"min": 4000,"max": 6000
-	}
+	},
+	"bodyMove": [10,4],
+	"faceMove": [16,12]
 }
