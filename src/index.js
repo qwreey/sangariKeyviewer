@@ -126,3 +126,12 @@ ioHook.on("mousedrag", whenMouse)
 ioHook.on("mousemove", whenMouse)
 
 ioHook.start()
+
+/* 창 닫기 버튼 */
+document.onreadystatechange = (event) => {
+    if (document.readyState == "complete") {
+        document.querySelector(".button#close").addEventListener("click", event => {
+			window.close();
+		});		
+    }
+};
