@@ -12,6 +12,9 @@ TODO: Add gif image here
 ![설치](./assets/readme/install.jpg)
 
 # Special Thanks!
-pikokr 님의 [KeyViewer](https://github.com/pikokr/KeyViewer) 를 이용했습니다!    
+pikokr 님의 [KeyViewer](https://github.com/pikokr/KeyViewer) 를 이용했습니다!  
 만드는 도중에 ioHook, 마우스트래킹, electron 같은 기술적인 정보로 많이 도움을 주셨어요!  
 다시한번 감사합니다 ㅎㅎ  
+
+binaryfunt 님의 [타이틀바 튜토리얼](https://github.com/binaryfunt/electron-seamless-titlebar-tutorial)을 참고했습니다!  
+닫는 버튼을 만들 수 있게 도움을 주었어요!  
