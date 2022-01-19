@@ -191,3 +191,4 @@ dist
 .pnp.*
 
 app/
+/.idea
