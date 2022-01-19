@@ -14,7 +14,7 @@ function createWindow() {
 		height: parseInt(winSize[1] * renderScale),
 		frame: false,
 		// alwaysOnTop: true,
-		resizable: false,
+		// resizable: false,
 		// transparent: true,
 		webPreferences: {
 			// transparent: true,
@@ -24,7 +24,7 @@ function createWindow() {
 			contextIsolation: false,
 		},
 	})
-	win.setAspectRatio(winSize[0])
+	win.setAspectRatio(winSize[0] / winSize[1])
 
 	win.loadFile("src/index.html")
 
