@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "electron": "11.0.0-beta.11",
+    "electron": "12",
     "electron-builder": "^22.7.0",
     "electronmon": "^1.1.2",
     "node-abi": "^2.26.0"
   },
   "dependencies": {
-    "iohook": "0.9.0",
+    "iohook": "^0.9.3",
     "lodash": "^4.17.20"
   },
   "cmake-js": {
@@ -20,7 +20,7 @@
   "iohook": {
     "targets": [
       "node-83",
-      "electron-85"
+      "electron-87"
     ],
     "platforms": [
       "win32",
