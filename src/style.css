@@ -29,12 +29,6 @@ body {
 #window-controls .button#close {
 	grid-column: 2;
 }
-.button#close:hover {
-	background: #e81123a4 !important;
-}
-.button#close:active {
-	background: #fa5462bd !important;
-}
 #window-controls .button {
 	user-select: none;
 	grid-row: 1 / span 1;
@@ -83,6 +77,23 @@ body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	line-height: 1.5;
+}
+
+.button#close {
+	grid-column: 2;
+}
+.button#close:hover {
+	background: #e81123a4 !important;
+}
+.button#close:active {
+	background: #fa5462bd !important;
+}
+.button#mode {
+	grid-column: 1;
+}
+.button#mode .icon {
+	width: 18px;
+	height: 18px;
 }
 
 /* root : 창을 드래그 할 수 있도록 만들어주는 최상단 오브젝트 */

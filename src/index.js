@@ -65,9 +65,8 @@ function blink() {
 }
 setTimeout(blink, 1)
 
-const ioHook = require("iohook")
-
 // 키 인식부분
+const ioHook = require("iohook")
 const whenKeys = document.querySelectorAll(".whenKeys")
 let downKeys = []
 ioHook.on("keydown", (event) => {
@@ -94,14 +93,21 @@ ioHook.on("keyup", (event) => {
 	}
 })
 
-/* 마우스 움직이는 부분 */
+// 마우스 움직이는 부분
+let pen = false;
 const mouse = document.querySelector("#hand_mouse")
-const moveMutX = config.mouseMoveMultiplier[0] * 2
-const moveMutY = config.mouseMoveMultiplier[1] * 2
+const mouseMutX = config.mouseMoveMultiplier[0] * 2
+const mouseMutY = config.mouseMoveMultiplier[1] * 2
 const mouseOffX = config.mouseOffset[0]
 const mouseOffY = config.mouseOffset[1]
 const mouseRotX = config.mouseRotateX
 const mouseRotY = config.mouseRotateY
+const penMutX = config.penMoveMultiplier[0] * 2
+const penMutY = config.penMoveMultiplier[1] * 2
+const penOffX = config.penOffset[0]
+const penOffY = config.penOffset[1]
+const penRotX = config.penRotateX
+const penRotY = config.penRotateY
 const bodyMoveX = config.bodyMove[0]
 const bodyMoveY = config.bodyMove[1]
 const faceMoveX = config.faceMove[0]
@@ -113,8 +119,8 @@ function whenMouse(event) {
 	let y = event.y / screen.height - 0.5
 	
 	// 마우스 움직이기
-	mouse.style.left = parseInt((x * -moveMutX) + mouseOffX + (y * mouseRotY)) + "px"
-	mouse.style.top  = parseInt((y * -moveMutY) + mouseOffY + (x * mouseRotX)) + "px"
+	mouse.style.left = parseInt((x * -(pen ? penMutX : mouseMutX)) + (pen ? penOffX : mouseOffX) + (y * (pen ? penRotY : mouseRotY))) + "px"
+	mouse.style.top  = parseInt((y * -(pen ? penMutY : mouseMutY)) + (pen ? penOffY : mouseOffY) + (x * (pen ? penRotX : mouseRotX))) + "px"
 	
 	// 몸 움직이기
 	body.style.left = parseInt(bodyMoveX * x) + "px"
@@ -127,11 +133,23 @@ ioHook.on("mousemove", whenMouse)
 
 ioHook.start()
 
-/* 창 닫기 버튼 */
+// 창 닫기 버튼
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {
         document.querySelector(".button#close").addEventListener("click", event => {
-			window.close();
-		});		
+			window.close()
+		})	
     }
-};
+}
+
+// 펜 모드로 바꾸기
+const base_img = document.querySelector(".base_img")
+const base_img_down = document.querySelector(".base_img_down")
+const hand_mouse_img = document.querySelector(".hand_mouse_img")
+function changeMode() {
+	pen = !pen
+	base_img.src = pen ? "./images/pen.png" : "./images/base.png"
+	base_img_down.src = pen ? "./images/pen_keydown.png" : "./images/base_keydown.png"
+	hand_mouse_img.src = pen ? "./images/hand_pen.png" : "./images/hand_mouse.png"
+}
+document.querySelector(".button#mode").addEventListener("click", changeMode)
